@@ -1,0 +1,41 @@
+{
+  "description": "Real OBD2 Mode $09 response samples",
+  "responses": [
+    {
+      "id": "vin_standard",
+      "description": "Standard VIN response - 17 character VIN",
+      "infoType": 2,
+      "rawHex": "49 02 01 31 47 31 46 42 33 4B 33 35 39 42 33 30 37 38 39 36",
+      "decoded": {
+        "vin": "1G1FB3K359B307896"
+      }
+    },
+    {
+      "id": "calibration_id",
+      "description": "Calibration ID response",
+      "infoType": 4,
+      "rawHex": "49 04 01 41 43 44 45 31 32 33 34 35 36 37 38",
+      "decoded": {
+        "calibrationId": "ACDE12345678"
+      }
+    },
+    {
+      "id": "cvn",
+      "description": "Calibration Verification Number",
+      "infoType": 6,
+      "rawHex": "49 06 01 12 34 56 78",
+      "decoded": {
+        "cvn": "12345678"
+      }
+    },
+    {
+      "id": "ecu_name",
+      "description": "ECU Name",
+      "infoType": 10,
+      "rawHex": "49 0A 01 50 43 4D 20 45 43 55 20 76 31 2E 30",
+      "decoded": {
+        "ecuName": "PCM ECU v1.0"
+      }
+    }
+  ]
+}

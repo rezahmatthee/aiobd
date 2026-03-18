@@ -1,0 +1,45 @@
+{
+  "description": "Real OBD2 freeze frame data samples",
+  "frames": [
+    {
+      "id": "misfire_p0300",
+      "description": "Freeze frame captured during random misfire event",
+      "dtc": "P0300",
+      "rawHex": "43 00 04 78 05 5A 0B 64 0C 0B B8 0D 58 0E 56 0F 4A 10 01 F4 11 80",
+      "decoded": {
+        "dtc": "P0300",
+        "pids": [
+          { "pid": "0x04", "name": "Calculated Engine Load", "value": 47.06, "unit": "%" },
+          { "pid": "0x05", "name": "Engine Coolant Temperature", "value": 50, "unit": "°C" },
+          { "pid": "0x0B", "name": "Intake Manifold Absolute Pressure", "value": 100, "unit": "kPa" },
+          { "pid": "0x0C", "name": "Engine RPM", "value": 3000, "unit": "RPM" },
+          { "pid": "0x0D", "name": "Vehicle Speed", "value": 88, "unit": "km/h" },
+          { "pid": "0x0E", "name": "Timing Advance", "value": 19, "unit": "° before TDC" },
+          { "pid": "0x0F", "name": "Intake Air Temperature", "value": 34, "unit": "°C" },
+          { "pid": "0x10", "name": "Mass Air Flow Rate", "value": 5.0, "unit": "g/s" },
+          { "pid": "0x11", "name": "Throttle Position", "value": 50.2, "unit": "%" }
+        ]
+      }
+    },
+    {
+      "id": "o2_sensor_p0131",
+      "description": "Freeze frame captured during O2 sensor low voltage fault",
+      "dtc": "P0131",
+      "rawHex": "41 31 04 30 05 78 0B 50 0C 07 D0 0D 00 0E 5E 0F 35 10 00 A0 11 20",
+      "decoded": {
+        "dtc": "P0131",
+        "pids": [
+          { "pid": "0x04", "name": "Calculated Engine Load", "value": 18.82, "unit": "%" },
+          { "pid": "0x05", "name": "Engine Coolant Temperature", "value": 80, "unit": "°C" },
+          { "pid": "0x0B", "name": "Intake Manifold Absolute Pressure", "value": 80, "unit": "kPa" },
+          { "pid": "0x0C", "name": "Engine RPM", "value": 2000, "unit": "RPM" },
+          { "pid": "0x0D", "name": "Vehicle Speed", "value": 0, "unit": "km/h" },
+          { "pid": "0x0E", "name": "Timing Advance", "value": 15, "unit": "° before TDC" },
+          { "pid": "0x0F", "name": "Intake Air Temperature", "value": 13, "unit": "°C" },
+          { "pid": "0x10", "name": "Mass Air Flow Rate", "value": 1.6, "unit": "g/s" },
+          { "pid": "0x11", "name": "Throttle Position", "value": 12.5, "unit": "%" }
+        ]
+      }
+    }
+  ]
+}

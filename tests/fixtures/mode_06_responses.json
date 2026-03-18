@@ -1,0 +1,53 @@
+{
+  "description": "Real OBD2 Mode $06 response samples",
+  "responses": [
+    {
+      "id": "oxygen_sensor_bank1_sensor1_rich_lean",
+      "description": "Oxygen Sensor Bank 1 Sensor 1 - Rich-to-Lean threshold voltage",
+      "rawHex": "46 01 01 03 4B 00 FF",
+      "decoded": {
+        "testId": 1,
+        "componentId": 1,
+        "testValue": 843,
+        "minLimit": 75,
+        "maxLimit": 255
+      }
+    },
+    {
+      "id": "catalyst_efficiency",
+      "description": "Catalyst Monitor - Efficiency below threshold",
+      "rawHex": "46 0B 01 72 14 00 FF",
+      "decoded": {
+        "testId": 11,
+        "componentId": 1,
+        "testValue": 114,
+        "minLimit": 20,
+        "maxLimit": 255
+      }
+    },
+    {
+      "id": "evap_purge_flow",
+      "description": "EVAP Monitor - Purge flow low threshold",
+      "rawHex": "46 0E 01 28 0A 00 64",
+      "decoded": {
+        "testId": 14,
+        "componentId": 1,
+        "testValue": 40,
+        "minLimit": 10,
+        "maxLimit": 100
+      }
+    },
+    {
+      "id": "egr_pressure_sensor",
+      "description": "EGR Monitor - Pressure sensor high flow threshold",
+      "rawHex": "46 0D 01 50 20 FF 00",
+      "decoded": {
+        "testId": 13,
+        "componentId": 1,
+        "testValue": 80,
+        "minLimit": 32,
+        "maxLimit": 255
+      }
+    }
+  ]
+}
