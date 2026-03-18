@@ -1,0 +1,56 @@
+{
+  "rpm": {
+    "request": "010C",
+    "response": "7E8 04 41 0C 1A F8 00 00",
+    "expected_value": 1726,
+    "unit": "RPM"
+  },
+  "speed": {
+    "request": "010D",
+    "response": "7E8 03 41 0D 64 00 00 00",
+    "expected_value": 100,
+    "unit": "km/h"
+  },
+  "coolant_temp": {
+    "request": "0105",
+    "response": "7E8 03 41 05 50 00 00 00",
+    "expected_value": 40,
+    "unit": "°C"
+  },
+  "engine_load": {
+    "request": "0104",
+    "response": "7E8 03 41 04 80 00 00 00",
+    "expected_value": 50.2,
+    "unit": "%"
+  },
+  "throttle_position": {
+    "request": "0111",
+    "response": "7E8 03 41 11 33 00 00 00",
+    "expected_value": 20.0,
+    "unit": "%"
+  },
+  "fuel_pressure": {
+    "request": "010A",
+    "response": "7E8 03 41 0A 28 00 00 00",
+    "expected_value": 120,
+    "unit": "kPa"
+  },
+  "dtc_codes": {
+    "request": "03",
+    "response": "43 01 33 00 00 00 00",
+    "codes": ["P0133"]
+  },
+  "vin": {
+    "request": "0902",
+    "response": "49 02 01 31 4A 54 32 42 46 32 32 4B 33 57 30 31 30 38 39 35 30",
+    "expected_value": "1JT2BF22K3W0108950"
+  },
+  "no_data": {
+    "request": "0199",
+    "response": "NO DATA"
+  },
+  "error_response": {
+    "request": "0199",
+    "response": "UNABLE TO CONNECT"
+  }
+}
