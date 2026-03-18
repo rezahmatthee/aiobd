@@ -61,8 +61,8 @@ export function parseCalibrationId(bytes: number[]): string {
 }
 
 /**
- * Parse CVN from Mode $09 response bytes
- * CVN is 4 bytes, represented as hex string
+ * Parse CVN (Calibration Verification Number) from Mode $09 response bytes.
+ * CVN is a 4-byte value, represented as an 8-character uppercase hex string.
  */
 export function parseCVN(bytes: number[]): string {
   // Skip message count byte

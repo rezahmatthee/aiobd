@@ -18,6 +18,10 @@ interface FreezeFrameDetailProps {
   onClose: () => void;
 }
 
+function formatPidHex(pid: number): string {
+  return `0x${pid.toString(16).padStart(2, '0').toUpperCase()}`;
+}
+
 function exportAsJSON(frame: FreezeFrame) {
   const dataStr = JSON.stringify(frame, null, 2);
   const blob = new Blob([dataStr], { type: 'application/json' });
@@ -32,7 +36,7 @@ function exportAsJSON(frame: FreezeFrame) {
 function exportAsCSV(frame: FreezeFrame) {
   const headers = ['PID (hex)', 'Name', 'Value', 'Unit'];
   const rows = frame.pids.map((pid) => [
-    `0x${pid.pid.toString(16).padStart(2, '0').toUpperCase()}`,
+    `${formatPidHex(pid.pid)}`,
     pid.name,
     String(pid.value),
     pid.unit,
@@ -96,7 +100,7 @@ function FreezeFrameDetail({ frame, onClear, onClose }: FreezeFrameDetailProps) 
             >
               <span style={{ color: '#64748b' }}>
                 <code style={{ background: '#f1f5f9', padding: '1px 4px', borderRadius: '3px', fontSize: '0.75rem' }}>
-                  0x{pid.pid.toString(16).padStart(2, '0').toUpperCase()}
+                  {formatPidHex(pid.pid)}
                 </code>{' '}
                 {pid.name}
               </span>

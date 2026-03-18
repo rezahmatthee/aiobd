@@ -81,7 +81,7 @@ export function parseFreezeFrameDTC(highByte: number, lowByte: number): string {
   const digit2 = highByte & 0x0F;
   const digit3 = (lowByte >> 4) & 0x0F;
   const digit4 = lowByte & 0x0F;
-  return `${system}${digit1}${digit2.toString(16).toUpperCase()}${digit3.toString(16).toUpperCase()}${digit4.toString(16).toUpperCase()}`;
+  return `${system}${digit1.toString(16).toUpperCase()}${digit2.toString(16).toUpperCase()}${digit3.toString(16).toUpperCase()}${digit4.toString(16).toUpperCase()}`;
 }
 
 /**
