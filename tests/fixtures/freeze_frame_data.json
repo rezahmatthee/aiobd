@@ -5,7 +5,7 @@
       "id": "misfire_p0300",
       "description": "Freeze frame captured during random misfire event",
       "dtc": "P0300",
-      "rawHex": "43 00 04 78 05 5A 0B 64 0C 0B B8 0D 58 0E 56 0F 4A 10 01 F4 11 80",
+      "rawHex": "03 00 04 78 05 5A 0B 64 0C 0B B8 0D 58 0E 56 0F 4A 10 01 F4 11 80",
       "decoded": {
         "dtc": "P0300",
         "pids": [
@@ -25,7 +25,7 @@
       "id": "o2_sensor_p0131",
       "description": "Freeze frame captured during O2 sensor low voltage fault",
       "dtc": "P0131",
-      "rawHex": "41 31 04 30 05 78 0B 50 0C 07 D0 0D 00 0E 5E 0F 35 10 00 A0 11 20",
+      "rawHex": "01 31 04 30 05 78 0B 50 0C 07 D0 0D 00 0E 5E 0F 35 10 00 A0 11 20",
       "decoded": {
         "dtc": "P0131",
         "pids": [
