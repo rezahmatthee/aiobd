@@ -112,10 +112,10 @@ export default function AdminDashboard() {
       <ConfirmDialog
         open={!!confirm}
         title="Delete User"
-        message={`Are you sure you want to deactivate ${confirm?.email}? This action cannot be undone.`}
+        message={`Are you sure you want to deactivate ${confirm?.email}? Their account will be set to inactive.`}
         onConfirm={() => { deleteUser(confirm.id); setConfirm(null); }}
         onCancel={() => setConfirm(null)}
-        confirmText="Delete"
+        confirmText="Deactivate"
         danger
       />
     </div>

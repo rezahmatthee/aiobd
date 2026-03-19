@@ -7,7 +7,7 @@ export default function ProtectedRoute({ children, roles }) {
 
   useEffect(() => {
     if (token && !user) fetchMe();
-  }, [token, user]);
+  }, [token, user, fetchMe]);
 
   if (!token) return <Navigate to="/login" replace />;
   if (loading) return <div style={{ minHeight: '100vh', background: '#0f0f0f', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888' }}>Loading...</div>;

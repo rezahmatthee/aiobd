@@ -20,33 +20,58 @@ const useSuperAdminStore = create((set) => ({
   },
 
   fetchAdmins: async () => {
-    const { data } = await superadminAPI.getAdmins();
-    set({ admins: data.admins });
+    try {
+      const { data } = await superadminAPI.getAdmins();
+      set({ admins: data.admins });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load admins' });
+    }
   },
 
   createAdmin: async (adminData) => {
-    const { data } = await superadminAPI.createAdmin(adminData);
-    set(state => ({ admins: [...state.admins, data.admin] }));
+    try {
+      const { data } = await superadminAPI.createAdmin(adminData);
+      set(state => ({ admins: [...state.admins, data.admin] }));
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to create admin' });
+    }
   },
 
   removeAdmin: async (id) => {
-    await superadminAPI.removeAdmin(id);
-    set(state => ({ admins: state.admins.filter(a => a._id !== id) }));
+    try {
+      await superadminAPI.removeAdmin(id);
+      set(state => ({ admins: state.admins.filter(a => a._id !== id) }));
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to remove admin' });
+    }
   },
 
   fetchSystemHealth: async () => {
-    const { data } = await superadminAPI.getSystemHealth();
-    set({ systemHealth: data.health });
+    try {
+      const { data } = await superadminAPI.getSystemHealth();
+      set({ systemHealth: data.health });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load system health' });
+    }
   },
 
   fetchSecurityAudit: async (params) => {
-    const { data } = await superadminAPI.getSecurityAudit(params);
-    set({ securityAudit: data.logs });
+    try {
+      const { data } = await superadminAPI.getSecurityAudit(params);
+      set({ securityAudit: data.logs });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load security audit' });
+    }
   },
 
   triggerBackup: async () => {
-    const { data } = await superadminAPI.triggerBackup();
-    return data;
+    try {
+      const { data } = await superadminAPI.triggerBackup();
+      return data;
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Backup failed' });
+      throw err;
+    }
   }
 }));
 

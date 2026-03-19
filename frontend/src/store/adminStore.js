@@ -32,28 +32,48 @@ const useAdminStore = create((set) => ({
   },
 
   updateUser: async (id, updates) => {
-    const { data } = await adminAPI.updateUser(id, updates);
-    set(state => ({ users: state.users.map(u => u._id === id ? data.user : u) }));
+    try {
+      const { data } = await adminAPI.updateUser(id, updates);
+      set(state => ({ users: state.users.map(u => u._id === id ? data.user : u) }));
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to update user' });
+    }
   },
 
   deleteUser: async (id) => {
-    await adminAPI.deleteUser(id);
-    set(state => ({ users: state.users.filter(u => u._id !== id) }));
+    try {
+      await adminAPI.deleteUser(id);
+      set(state => ({ users: state.users.filter(u => u._id !== id) }));
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to delete user' });
+    }
   },
 
   changeRole: async (id, role) => {
-    const { data } = await adminAPI.changeRole(id, role);
-    set(state => ({ users: state.users.map(u => u._id === id ? data.user : u) }));
+    try {
+      const { data } = await adminAPI.changeRole(id, role);
+      set(state => ({ users: state.users.map(u => u._id === id ? data.user : u) }));
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to change role' });
+    }
   },
 
   fetchActivityLog: async (params) => {
-    const { data } = await adminAPI.getActivityLog(params);
-    set({ activityLogs: data.logs });
+    try {
+      const { data } = await adminAPI.getActivityLog(params);
+      set({ activityLogs: data.logs });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load activity log' });
+    }
   },
 
   fetchAnalytics: async () => {
-    const { data } = await adminAPI.getAnalytics();
-    set({ analytics: data });
+    try {
+      const { data } = await adminAPI.getAnalytics();
+      set({ analytics: data });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load analytics' });
+    }
   }
 }));
 

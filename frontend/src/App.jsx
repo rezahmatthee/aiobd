@@ -11,6 +11,8 @@ import ProtectedRoute from './routes/ProtectedRoute';
 export default function App() {
   const { user, token, fetchMe } = useAuthStore();
 
+  // Run once on mount to restore session from stored token
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (token && !user) fetchMe();
   }, []);

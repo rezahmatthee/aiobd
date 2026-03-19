@@ -8,11 +8,12 @@
     "build": "echo 'No build step required'"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^1.13.5",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-rate-limit": "^7.5.0",
     "helmet": "^4.4.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9",

@@ -21,23 +21,39 @@ const useUserStore = create((set) => ({
   },
 
   fetchVehicles: async () => {
-    const { data } = await userAPI.getVehicles();
-    set({ vehicles: data.vehicles });
+    try {
+      const { data } = await userAPI.getVehicles();
+      set({ vehicles: data.vehicles });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load vehicles' });
+    }
   },
 
   fetchDiagnostics: async (params) => {
-    const { data } = await userAPI.getDiagnostics(params);
-    set({ diagnostics: data.diagnostics });
+    try {
+      const { data } = await userAPI.getDiagnostics(params);
+      set({ diagnostics: data.diagnostics });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load diagnostics' });
+    }
   },
 
   fetchStatistics: async () => {
-    const { data } = await userAPI.getStatistics();
-    set({ statistics: data.statistics });
+    try {
+      const { data } = await userAPI.getStatistics();
+      set({ statistics: data.statistics });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load statistics' });
+    }
   },
 
   fetchRecentActivity: async () => {
-    const { data } = await userAPI.getRecentActivity();
-    set({ recentActivity: data.activities });
+    try {
+      const { data } = await userAPI.getRecentActivity();
+      set({ recentActivity: data.activities });
+    } catch (err) {
+      set({ error: err.response?.data?.message || 'Failed to load activity' });
+    }
   }
 }));
 
