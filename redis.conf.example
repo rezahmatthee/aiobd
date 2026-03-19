@@ -1,0 +1,22 @@
+# Redis configuration for AIOBD production
+# Copy this file to redis.conf and set requirepass to a strong secret.
+
+appendonly yes
+# Set a strong password here (or inject via Docker secrets and a startup script)
+# requirepass CHANGE_ME_TO_A_STRONG_REDIS_PASSWORD
+
+# Disable dangerous commands
+rename-command FLUSHDB ""
+rename-command FLUSHALL ""
+rename-command DEBUG ""
+rename-command CONFIG ""
+rename-command SLAVEOF ""
+rename-command REPLICAOF ""
+
+# Memory limit
+maxmemory 128mb
+maxmemory-policy allkeys-lru
+
+# Disable remote access (listen on loopback only — Docker bridge handles routing)
+bind 0.0.0.0
+protected-mode no
