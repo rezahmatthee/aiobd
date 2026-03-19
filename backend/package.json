@@ -1,1 +1,25 @@
-{\n  "name": "aiobd-backend",\n  "version": "1.0.0",\n  "main": "index.js",\n  "scripts": {\n    "start": "node index.js",\n    "dev": "nodemon index.js",\n    "build": "echo 'Building...'"\n  },\n  "dependencies": {\n    "axios": "^0.21.1",\n    "bcryptjs": "^2.4.3",\n    "cors": "^2.8.5",\n    "dotenv": "^10.0.0",\n    "express": "^4.17.1",\n    "helmet": "^4.4.1",\n    "jsonwebtoken": "^8.5.1",\n    "mongoose": "^5.10.9",\n    "morgan": "^1.10.0",\n    "socket.io": "^4.0.0"\n  }\n}
+{
+  "name": "aiobd-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
